@@ -18,6 +18,9 @@ group = 'com.todo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
 repositories {
 	mavenCentral()
 }

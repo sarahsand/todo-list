@@ -1,15 +1,32 @@
 package com.todo.todolist.service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.todo.todolist.model.Todo;
+
+@Service
 public class TodoService {
 
-	private int id;
-    private String user;
-    private String desc;
-    private Date targetDate;
-    private boolean isDone;
-    
-    
-	
+	  private static List<Todo> todos = new ArrayList<Todo>();
+	    private static int todoCount = 3;
+
+	    static {
+	        todos.add(new Todo(1, "test", "Make a list", new Date(),false));
+	        todos.add(new Todo(2, "test", "Check it twice", new Date(), false));
+	        todos.add(new Todo(3, "test", "Determine who's naughty and who's nice", new Date(),false));
+	    }
+
+	    public List<Todo> retrieveTodos(String user) {
+	        List<Todo> filteredTodos = new ArrayList<Todo>();
+	        for (Todo todo : todos) {
+	            if (todo.getUser().equals(user)) {
+	                filteredTodos.add(todo);
+	            }
+	        }
+	        return filteredTodos;
+	    }
 }

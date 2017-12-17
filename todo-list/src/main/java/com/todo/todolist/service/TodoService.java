@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.todo.todolist.model.Todo;
 
+//Todoservice uses a simple ArrayList to store a list of todo’s in memory. It offers a method to retrieve the todo’s.
 @Service
 public class TodoService {
 

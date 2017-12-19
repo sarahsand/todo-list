@@ -10,24 +10,24 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+plugins {
+	id 'java'
+	id 'war'
+	id 'eclipse'
+	id 'org.springframework.boot'
+}
 
 group = 'com.todo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-spring.mvc.view.prefix=/WEB-INF/jsp/
-spring.mvc.view.suffix=.jsp
-
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.apache.tomcat.embed:tomcat-embed-jasper:provided')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0' 
+    testCompile 'junit:junit:4.12'
 }

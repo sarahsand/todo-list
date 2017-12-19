@@ -17,11 +17,11 @@ public class TodoController {
 	@Autowired
 	TodoService service;
 	
-	@RequestMapping(value="/hello", method=RequestMethod.GET)
-	public String showTodos(ModelMap model) {
-		String name = (String) model.get("name");
-		model.put("todos", service.retrieveTodos(name));
-		return "list-todos";
-	}
+	@RequestMapping(value="/list-todos", method = RequestMethod.GET)
+    public String showTodos(ModelMap model){
+        String name = (String) model.get("name");
+        model.put("todos", service.retrieveTodos(name));
+        return "list-todos";
+    }
 	
 }

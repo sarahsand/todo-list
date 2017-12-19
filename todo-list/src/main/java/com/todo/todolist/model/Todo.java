@@ -2,7 +2,6 @@ package com.todo.todolist.model;
 
 import java.util.Date;
 
-
 //Todo item
 public class Todo {
 
